@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -95,13 +96,24 @@ namespace FormsApp
             }
             else if(e.Node.Text == "TekstKast-TextBox")
             {
+                string text_file;
+                try
+                {
+                    StreamReader from_file = new StreamReader(@"C:\Users\Game\RiderProjects\FormsApp\FormsApp\bin\Debug\file.txt");
+                    text_file = from_file.ReadToEnd();
+                }
+                catch (FileNotFoundException exception)
+                {
+                    text_file = "Tetsk puudub";
+                }
                 //FileNotFoundException exception
                 txt_box = new TextBox();
                 txt_box.Multiline = true;
-                txt_box.Text = "";
+                txt_box.Text = text_file;
                 txt_box.Location = new Point(300, 300);
                 txt_box.Width = 200;
                 txt_box.Height = 200;
+                Controls.Add(txt_box);
             }
         }
 
