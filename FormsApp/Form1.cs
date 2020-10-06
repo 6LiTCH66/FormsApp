@@ -104,7 +104,7 @@ namespace FormsApp
                 }
                 catch (FileNotFoundException exception)
                 {
-                    text_file = "Tetsk puudub";
+                    text_file = "Tetst puudub";
                 }
                 //FileNotFoundException exception
                 txt_box = new TextBox();
