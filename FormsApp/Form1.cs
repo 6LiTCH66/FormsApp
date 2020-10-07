@@ -102,11 +102,10 @@ namespace FormsApp
                     StreamReader from_file = new StreamReader(@"C:\Users\Game\RiderProjects\FormsApp\FormsApp\bin\Debug\file.txt");
                     text_file = from_file.ReadToEnd();
                 }
-                catch (FileNotFoundException exception)
+                catch (FileNotFoundException exception DirectoryNotFoundException)
                 {
                     text_file = "Tetst puudub";
                 }
-                //FileNotFoundException exception
                 txt_box = new TextBox();
                 txt_box.Multiline = true;
                 txt_box.Text = text_file;
